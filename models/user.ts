@@ -5,10 +5,6 @@ const user = new mongoose.Schema({
       required: true,
       type: String
     },
-    email: {
-      required: true,
-      type: String
-    },
     firstName: {
         required: true,
         type: String
@@ -16,14 +12,6 @@ const user = new mongoose.Schema({
     lastName: {
         required: true,
         type: String
-    },
-    telephone: {
-      required: true,
-      type: String
-    },
-    address: {
-      required: true,
-      type: String
     },
     password: {
       required: true,
@@ -37,6 +25,10 @@ const user = new mongoose.Schema({
       required: true,
       type: Date
     },
+    contact: {
+        required: true,
+        type: mongoose.Schema.Types.ObjectId, ref: 'Contact'
+      }
 })
 
 export default mongoose.model('User', user);
